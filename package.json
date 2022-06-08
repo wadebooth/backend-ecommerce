@@ -1,0 +1,27 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wadebooth/backend-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wadebooth/backend-ecommerce/issues"
+  },
+  "homepage": "https://github.com/wadebooth/backend-ecommerce#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0"
+  }
+}
