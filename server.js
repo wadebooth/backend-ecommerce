@@ -1,0 +1,20 @@
+const express = require('express')
+const products = require('./data/products')
+
+const app = express()
+
+app.get('/', (req, res) => {
+    res.send('API is running...')
+})
+
+app.get('/api/products', (req, res) => {
+    res.json(products)
+})
+
+app.listen(5050, () => {
+ console.log('Server running on port 5050')})
+
+
+
+
+ 
