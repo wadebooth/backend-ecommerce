@@ -1,6 +1,8 @@
 import express from 'express'
 import products from './data/products.js'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express()
 
 app.get('/', (req, res) => {
@@ -13,9 +15,12 @@ app.get('/api/products', (req, res) => {
 
 app.get('/api/products/:id', (req, res) => {
   const product = products.find((p) => p._id === req.params.id)
-  res.json(products)
+  res.json(product)
 })
 
-app.listen(5050, () => {
-  console.log('Server running on port 5050')
-})
+const PORT = process.env.PORT || 5050
+
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`)
+)
