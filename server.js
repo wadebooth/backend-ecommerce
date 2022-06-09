@@ -4,6 +4,8 @@ import products from './src/data/products.js'
 import connectDb from './src/gateway/db.js'
 import colors from 'colors'
 
+import productRoutes from './src/data/products.js'
+
 dotenv.config()
 
 connectDb()
