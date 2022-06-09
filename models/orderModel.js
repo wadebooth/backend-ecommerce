@@ -31,6 +31,7 @@ const orderSchema = mongoose.Schema(
       required: true,
     },
     paymentResult: {
+      //when payment is successful, it will update with a set of data. this is its schema
       id: { type: String },
       status: { type: String },
       update_time: { type: String }, //changes when someone makes a purchase
