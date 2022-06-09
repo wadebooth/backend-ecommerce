@@ -36,12 +36,43 @@ const orderSchema = mongoose.Schema(
       update_time: { type: String },
       email_address: { type: String },
     },
+    taxPrice: {
+      type: String,
+      required: true,
+      default: 0.0,
+    },
+    ShippingPrice: {
+      type: String,
+      required: true,
+      default: 0.0,
+    },
+    totalPrice: {
+      type: String,
+      required: true,
+      default: 0.0,
+    },
+    isPaid: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    paidAt: {
+      type: Date,
+    },
+    isDelivered: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    deliveredAt: {
+      type: Date,
+    },
   },
   {
     timestamps: true,
   }
 )
 
-const User = mongoose.model('User', userSchema)
+const Order = mongoose.model('Order', orderSchema)
 
-export default User
+export default Order
