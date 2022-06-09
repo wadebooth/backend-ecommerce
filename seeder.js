@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import Colors from 'colors'
+import colors from 'colors'
 import users from './src/data/users.js'
 import products from './src/data/products.js'
 import User from './models/userModel.js'
@@ -14,7 +14,7 @@ dotenv.config()
 
 connectDb()
 
-const importDAta = async () => {
+const importData = async () => {
     try {
         await Order.deleteMany()
         await Product.deleteMany()
