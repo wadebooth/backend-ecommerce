@@ -4,7 +4,10 @@ const connectDb = async () => {
   const client = new MongoClient(process.env.MONGO_URL)
   await client.connect()
 
-  return client.db('ecommerce_site')
+  return (
+    client.db('ecommerce_site') &&
+    console.log(`MongoDB has been connected.`.green.underline)
+  )
 }
 
 export const getEcommerceProducts = async () => {
