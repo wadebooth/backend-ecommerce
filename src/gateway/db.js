@@ -6,7 +6,7 @@ const connectDb = async () => {
 
   return (
     client.db('ecommerce_site') &&
-    console.log(`MongoDB has been connected.`.green.underline)
+    console.log(`MongoDB has been connected.`.cyan.underline)
   )
 }
 
