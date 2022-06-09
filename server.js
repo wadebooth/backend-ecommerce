@@ -1,6 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import products from './src/products.js'
+import products from './src/data/products.js'
 import connectDb from './src/gateway/db.js'
 import colors from 'colors'
 

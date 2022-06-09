@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: "Air Jordan 1 Retro High OG 'Chicago' 2015",
     image: '/images/jordan_1_chicago.jpg',
     description:
@@ -14,7 +13,6 @@ const products = [
     size: '10.5 US',
   },
   {
-    _id: '2',
     name: "Yeezy Boost 700 'Wave Runner'",
     image: '/images/yeezy_boost_700.jpg',
     description:
@@ -28,7 +26,6 @@ const products = [
     size: '11 US',
   },
   {
-    _id: '3',
     name: "Off White x Air Jordan 1 Retro High OG 'UNC'",
     image: '/images/offwhite_airjordanogunc.webp',
     description:
@@ -42,7 +39,6 @@ const products = [
     size: '9 US',
   },
   {
-    _id: '4',
     name: "Yeezy Boost 350 V2 CMPCT 'Slate Carbon'",
     image: '/images/slatecarbonyeezy.jpg',
     description:
@@ -56,7 +52,6 @@ const products = [
     size: '10 US',
   },
   {
-    _id: '5',
     name: "Air Jordan 5 Retro SE 'Easter'",
     image: '/images/aj5easter.jpg',
     description:
@@ -70,7 +65,6 @@ const products = [
     size: '13 US',
   },
   {
-    _id: '6',
     name: "Blazer Mid '77 Vintage 'White Black'",
     image: '/images/blazer.jpg',
     description:
