@@ -1,9 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import products from './data/products.js'
+import products from './src/products.js'
+import connectDb from './src/gateway/db.js'
 
 dotenv.config()
+
+connectDb()
+
 const app = express()
+
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('API is running...')
