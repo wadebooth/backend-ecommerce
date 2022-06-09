@@ -69,7 +69,7 @@ const orderSchema = mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, //created at && updated at
   }
 )
 
