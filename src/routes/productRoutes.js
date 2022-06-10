@@ -4,8 +4,8 @@ import Product from '../../models/productModel.js'
 
 const router = express.Router()
 
-// @desc Fetch all products
-// @route GET /api/products
+// @desc Fetches all products
+// @route GETS /api/products
 // @access Public
 router.get(
   '/',

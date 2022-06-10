@@ -1,3 +1,5 @@
+import mongoose from 'mongooose'
+
 const userSchema = mongoose.Schema(
   {
     name: {
