@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDb from './src/gateway/db.js'
+
 import colors from 'colors'
 
 import productRoutes from './src/routes/productRoutes.js'
