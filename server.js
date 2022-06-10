@@ -21,12 +21,12 @@ app.get('/api/products/', (req, res) => {
   res.json(productRoutes)
 })
 
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id)
-  res.json(product)
-})
+// app.get('/api/products/:id', (req, res) => {
+//   const product = products.find((p) => p._id === req.params.id)
+//   res.json(product)
+// })
 
-app.use('/api/products', productRoutes)
+app.use(productRoutes)
 
 const PORT = process.env.PORT || 5050
 
