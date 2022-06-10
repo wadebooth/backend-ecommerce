@@ -1,10 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import products from './src/data/products.js'
 import connectDb from './src/gateway/db.js'
 import colors from 'colors'
 
-import productRoutes from './src/data/products.js'
+import productRoutes from './src/routes/productRoutes.js'
 
 dotenv.config()
 
@@ -19,13 +18,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
-  res.json(products)
+  res.json(productRoutes)
 })
 
 app.get('/api/products/:id', (req, res) => {
   const product = products.find((p) => p._id === req.params.id)
   res.json(product)
 })
+
+app.use('/api/products', productRoutes)
 
 const PORT = process.env.PORT || 5050
 
