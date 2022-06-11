@@ -1,4 +1,3 @@
-import mongoose from 'mongoose'
 import { MongoClient } from 'mongodb'
 
 const connectDb = async () => {
@@ -11,10 +10,10 @@ const connectDb = async () => {
   )
 }
 
-export const getEcommerceProducts = async () => {
-  const db = await connectDb()
+// export const getEcommerceProducts = async () => {
+//   const db = await connectDb()
 
-  return db.collection('products')
-}
+//   return db.collection('products')
+// }
 
-export default connectDb
+// export default connectDb

@@ -1,32 +1,59 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import connectDb from './src/gateway/db.js'
-import colors from 'colors'
+const express = require('express')
+const dotenv = require('dotenv')
+// import connectDb from './src/gateway/db.js'
+// import colors from 'colors'
+const mongo = require('mongodb').MongoClient
 
-import productRoutes from './src/routes/productRoutes.js'
-
+// import productRoutes from './src/routes/productRoutes.js'
+const app = express()
+app.use(express.json())
 dotenv.config()
 
-connectDb()
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}
 
-const app = express()
+let productsdb
+mongo.connect(process.env.MONGO_URL, options, (err, mongoClient) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  console.log('we are connected!')
 
-app.use(express.json())
+  app.listen(3000, () => console.log('app is listening on port 3000'))
+
+  const db = mongoClient.db('eCommerce_finalproject')
+  productsdb = db.collection('products')
+})
 
 app.get('/', (req, res) => {
-  res.send('API is running...')
+  res.send('API is running...test')
 })
 
-app.get('/api/products/', (req, res) => {
-  res.json(productRoutes)
+app.get('/api/products', async (req, res) => {
+  const allProducts = await productsdb.find()
+  console.log(allProducts)
+
+  // connect to mongo collection
+  // get all products
+  // send all products to the front end
+  res.send(allProducts)
 })
 
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id)
-  res.json(product)
+//POST
+app.post('/', (req, res) => {
+  productsdb.insertOne(req.body)
+  res.status(201).send('item was posted')
 })
 
-app.use('/api/products', productRoutes)
+// app.get('/api/products/:id', (req, res) => {
+//   const product = products.find((p) => p._id === req.params.id)
+//   res.json(product)
+// })
+
+// app.use('/api/products', productRoutes)
 
 const PORT = process.env.PORT || 5050
 
