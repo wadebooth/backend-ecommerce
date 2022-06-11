@@ -55,7 +55,7 @@ app.post('/', (req, res) => {
 
 // app.use('/api/products', productRoutes)
 
-const PORT = process.env.PORT || 5050
+const PORT = process.env.PORT || 3000
 
 app.listen(
   PORT,
