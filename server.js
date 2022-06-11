@@ -3,9 +3,11 @@ const dotenv = require('dotenv')
 // import connectDb from './src/gateway/db.js'
 // import colors from 'colors'
 const mongo = require('mongodb').MongoClient
+const cors = require('cors')
 
 // import productRoutes from './src/routes/productRoutes.js'
 const app = express()
+app.use(cors())
 app.use(express.json())
 dotenv.config()
 
