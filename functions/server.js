@@ -57,11 +57,11 @@ app.post('/', (req, res) => {
   res.status(201).send('item was posted')
 })
 
-// app.get('/api/products/:id', (req, res) => {
-//   const product = products.find((p) => p._id === req.params.id)
-//   res.json(product)
-// })
+app.get('/api/products/:id', (req, res) => {
+  const product = products.find((product) => p._id === req.params.id)
+  res.json(product)
+})
 
-// app.use('/api/products', productRoutes)
+app.use('/api/products', productRoutes)
 
 exports.app = functions.https.onRequest(app)
