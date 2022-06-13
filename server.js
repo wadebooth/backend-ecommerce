@@ -17,6 +17,7 @@ const options = {
 }
 
 let productsdb
+
 mongo.connect(process.env.MONGO_URL, options, (err, mongoClient) => {
   if (err) {
     console.error(err)
