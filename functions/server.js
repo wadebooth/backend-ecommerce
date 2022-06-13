@@ -7,6 +7,14 @@ const functions = require('firebase-functions')
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(
+  cors({
+    origin: [
+      'https://https://ecommerce-frontend-wb.web.app/',
+      'http://localhost:3000',
+    ],
+  })
+)
 dotenv.config()
 
 const options = {
