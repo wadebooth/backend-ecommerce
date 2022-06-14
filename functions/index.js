@@ -1,9 +1,48 @@
-const functions = require("firebase-functions");
+import mongo from 'mongodb'
+import express from 'express'
+import { config } from 'dotenv'
+import cors from 'cors'
+import functions from 'firebase-functions'
+import { MongoClient } from 'mongodb'
+import { productRouter } from './src/routes/productRoutes.js'
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+config()
+const app = express()
+app.use(cors())
+app.use(express.json())
+app.use(
+  cors({
+    origin: [
+      'https://https://ecommerce-frontend-wb.web.app/',
+      'http://localhost:3030',
+    ],
+  })
+)
+
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}
+
+// const client = mongo.connect(
+//   process.env.MONGO_URL,
+//   options,
+//   (err, mongoClient) => {
+//     if (err) {
+//       console.error(err)
+//       return
+//     }
+//     console.log('we are connected!')
+
+//     const db = MongoClient.db('eCommerce_finalproject')
+//     productsdb = db.collection('products')
+//   }
+// )
+
+app.get('/', (req, res) => {
+  res.send('API is running...test')
+})
+
+app.use(productRouter)
+
+export const api = functions.https.onRequest(app)

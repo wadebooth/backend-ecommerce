@@ -1,19 +1,16 @@
 import { MongoClient } from 'mongodb'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const connectDb = async () => {
+export const getDb = async () => {
   const client = new MongoClient(process.env.MONGO_URL)
   await client.connect()
 
-  return (
-    client.db('ecommerce_site') &&
-    console.log(`MongoDB has been connected.`.cyan.underline)
-  )
+  return client.db('eCommerce_finalproject')
 }
 
-// export const getEcommerceProducts = async () => {
-//   const db = await connectDb()
+export const getProductsCollection = async () => {
+  const db = await getDb()
 
-//   return db.collection('products')
-// }
-
-// export default connectDb
+  return db.collection('products')
+}
