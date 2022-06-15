@@ -1,0 +1,96 @@
+[debug] [2022-06-15T21:54:27.792Z] ----------------------------------------------------------------------
+[debug] [2022-06-15T21:54:27.793Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-06-15T21:54:27.793Z] CLI Version:   10.8.0
+[debug] [2022-06-15T21:54:27.793Z] Platform:      darwin
+[debug] [2022-06-15T21:54:27.793Z] Node Version:  v16.14.2
+[debug] [2022-06-15T21:54:27.794Z] Time:          Wed Jun 15 2022 17:54:27 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-06-15T21:54:27.794Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-15T21:54:27.821Z] Field ".emulators.hosting.port" in "firebase.json" is possibly invalid: should be number
+[debug] [2022-06-15T21:54:27.823Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-15T21:54:27.823Z] > authorizing via signed-in user (wademgmt@gmail.com)
+[debug] [2022-06-15T21:54:27.823Z] [iam] checking project ecommerce-backend-wb for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-06-15T21:54:27.824Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-backend-wb:testIamPermissions [none]
+[debug] [2022-06-15T21:54:27.824Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-backend-wb:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-15T21:54:28.012Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-backend-wb:testIamPermissions 200
+[debug] [2022-06-15T21:54:28.012Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-backend-wb:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-06-15T21:54:28.012Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ecommerce-backend-wb/serviceAccounts/ecommerce-backend-wb@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-06-15T21:54:28.013Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ecommerce-backend-wb/serviceAccounts/ecommerce-backend-wb@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-06-15T21:54:28.140Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ecommerce-backend-wb/serviceAccounts/ecommerce-backend-wb@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-06-15T21:54:28.141Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ecommerce-backend-wb/serviceAccounts/ecommerce-backend-wb@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-06-15T21:54:28.143Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb [none]
+[debug] [2022-06-15T21:54:28.385Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb 200
+[debug] [2022-06-15T21:54:28.385Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb {"projectId":"ecommerce-backend-wb","projectNumber":"608614765308","displayName":"ecommerce-backend-wb","name":"projects/ecommerce-backend-wb","resources":{"hostingSite":"ecommerce-backend-wb","realtimeDatabaseInstance":"ecommerce-backend-wb-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'ecommerce-backend-wb'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2022-06-15T21:54:28.389Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb [none]
+[debug] [2022-06-15T21:54:28.629Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb 200
+[debug] [2022-06-15T21:54:28.629Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb {"projectId":"ecommerce-backend-wb","projectNumber":"608614765308","displayName":"ecommerce-backend-wb","name":"projects/ecommerce-backend-wb","resources":{"hostingSite":"ecommerce-backend-wb","realtimeDatabaseInstance":"ecommerce-backend-wb-default-rtdb"},"state":"ACTIVE"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2022-06-15T21:54:28.632Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-06-15T21:54:28.634Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-06-15T21:54:28.634Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudbuild.googleapis.com [none]
+[debug] [2022-06-15T21:54:28.635Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/artifactregistry.googleapis.com [none]
+[debug] [2022-06-15T21:54:28.983Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/artifactregistry.googleapis.com 200
+[debug] [2022-06-15T21:54:28.983Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/artifactregistry.googleapis.com [omitted]
+[debug] [2022-06-15T21:54:28.984Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/runtimeconfig.googleapis.com 200
+[debug] [2022-06-15T21:54:28.984Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-06-15T21:54:28.984Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudbuild.googleapis.com 200
+[debug] [2022-06-15T21:54:28.984Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-06-15T21:54:29.261Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudfunctions.googleapis.com 200
+[debug] [2022-06-15T21:54:29.262Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecommerce-backend-wb/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-06-15T21:54:29.262Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb/adminSdkConfig [none]
+[debug] [2022-06-15T21:54:29.496Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb/adminSdkConfig 200
+[debug] [2022-06-15T21:54:29.496Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb/adminSdkConfig {"projectId":"ecommerce-backend-wb","databaseURL":"https://ecommerce-backend-wb-default-rtdb.firebaseio.com","storageBucket":"ecommerce-backend-wb.appspot.com"}
+[debug] [2022-06-15T21:54:29.497Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ecommerce-backend-wb/configs [none]
+[debug] [2022-06-15T21:54:30.070Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ecommerce-backend-wb/configs 200
+[debug] [2022-06-15T21:54:30.070Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ecommerce-backend-wb/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-06-15T21:54:30.073Z] Validating nodejs source
+[debug] [2022-06-15T21:54:31.022Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.3.0",
+    "firebase-functions": "^3.21.2",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.3.8"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true,
+  "type": "module"
+}
+[debug] [2022-06-15T21:54:31.023Z] Building nodejs source
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2022-06-15T21:54:31.024Z] Analyzing nodejs backend spec
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/wadebooth/code/ecommerce-backend/functions (66.97 KB) for uploading 
+[debug] [2022-06-15T21:54:31.265Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ecommerce-backend-wb/locations/-/functions [none]
+[debug] [2022-06-15T21:54:31.911Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ecommerce-backend-wb/locations/-/functions 200
+[debug] [2022-06-15T21:54:31.911Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ecommerce-backend-wb/locations/-/functions {"functions":[{"name":"projects/ecommerce-backend-wb/locations/us-central1/functions/api","httpsTrigger":{"url":"https://us-central1-ecommerce-backend-wb.cloudfunctions.net/api","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"api","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ecommerce-backend-wb@appspot.gserviceaccount.com","updateTime":"2022-06-15T21:33:05.514Z","versionId":"1","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-583178456179.us-central1.cloudfunctions.appspot.com/a5e37c35-9e1e-45f3-a5d4-e1f1bf993560.zip","environmentVariables":{"MONGO_URL":"mongodb+srv://wadebooth:bocacoderocksmysocksoff@cluster0.tnnhf.mongodb.net/?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ecommerce-backend-wb\",\"databaseURL\":\"https://ecommerce-backend-wb-default-rtdb.firebaseio.com\",\"storageBucket\":\"ecommerce-backend-wb.appspot.com\"}","GCLOUD_PROJECT":"ecommerce-backend-wb"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"7869f189-43d0-485c-9f91-55f1b1deae61","buildName":"projects/608614765308/locations/us-central1/builds/7869f189-43d0-485c-9f91-55f1b1deae61","dockerRegistry":"CONTAINER_REGISTRY"},{"name":"projects/ecommerce-backend-wb/locations/us-central1/functions/app","httpsTrigger":{"url":"https://us-central1-ecommerce-backend-wb.cloudfunctions.net/app","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"app","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"ecommerce-backend-wb@appspot.gserviceaccount.com","updateTime":"2022-06-14T17:34:07.087Z","versionId":"10","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-583178456179.us-central1.cloudfunctions.appspot.com/e2c271d9-6dcf-43dc-954e-f8e0c2816056.zip","environmentVariables":{"MONGO_URL":"mongodb+srv://wadebooth:471Rivard@cluster0.tnnhf.mongodb.net/?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ecommerce-backend-wb\",\"databaseURL\":\"https://ecommerce-backend-wb-default-rtdb.firebaseio.com\",\"storageBucket\":\"ecommerce-backend-wb.appspot.com\"}","GCLOUD_PROJECT":"ecommerce-backend-wb"},"runtime":"nodejs16","maxInstances":3000,"ingressSettings":"ALLOW_ALL","buildId":"8a1ca6cb-c8a9-49bb-8dc5-91095cd95589","buildName":"projects/608614765308/locations/us-central1/builds/8a1ca6cb-c8a9-49bb-8dc5-91095cd95589","dockerRegistry":"CONTAINER_REGISTRY"}]}
+[debug] [2022-06-15T21:54:31.918Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb [none]
+[debug] [2022-06-15T21:54:32.075Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb 200
+[debug] [2022-06-15T21:54:32.075Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-backend-wb {"projectId":"ecommerce-backend-wb","projectNumber":"608614765308","displayName":"ecommerce-backend-wb","name":"projects/ecommerce-backend-wb","resources":{"hostingSite":"ecommerce-backend-wb","realtimeDatabaseInstance":"ecommerce-backend-wb-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-06-15T21:54:32.078Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/608614765308/sites/ecommerce-backend-wb/versions [none]
+[debug] [2022-06-15T21:54:32.079Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/608614765308/sites/ecommerce-backend-wb/versions {"config":{"rewrites":[{"glob":"**","function":"api","functionRegion":"us-central1"}]},"labels":{"deployment-tool":"cli-firebase"}}
