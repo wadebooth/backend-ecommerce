@@ -5,12 +5,27 @@ import { createProduct } from '../services/products-services.js'
 const productRouter = express.Router()
 
 const getProducts = async (req, res) => {
-  const col = await getProductsCollection()
-  res.send(col.find({}))
+  try {
+    const col = await getProductsCollection()
+    const data = await col.find({}).toArray()
+    res.send(data)
+  } catch (err) {
+    res.status(500).send(err)
+  }
 }
 
-const addProduct = async (req, res) => {
-  const product = req.body
+export const addProduct = async (req, res) => {
+  const product = new product({
+    name: req.body.name,
+    image: req.body.image,
+    brand: req.body.brand,
+    category: req.body.category,
+    description: req.body.description,
+    rating: req.body.category,
+    numReviews: req.body.numReviews,
+    price: req.body.price,
+    countInStock: req.body.countInStock,
+  })
   const id = await createProduct(product)
   res.send(id.toString())
 }

@@ -45,4 +45,8 @@ app.get('/', (req, res) => {
 
 app.use(productRouter)
 
+app.listen(3001, () => {
+  console.log('Api running...')
+})
+
 export const api = functions.https.onRequest(app)

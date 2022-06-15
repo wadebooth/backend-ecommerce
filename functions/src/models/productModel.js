@@ -1,23 +1,19 @@
-// import mongoose from 'mongoose'
+import mongoose from 'mongoose'
+const { Schema, model } = mongoose
 
-const reviewSchema = Schema(
-  {
-    name: { type: String, required: true },
-    rating: { type: String, required: true },
-    comment: { type: String, required: true },
-  },
-  {
-    timestamps: true,
-  }
-)
+// const reviewSchema = mongoose.Schema(
+//   {
+//     name: { type: String, required: true },
+//     rating: { type: String, required: true },
+//     comment: { type: String, required: true },
+//   },
+//   {
+//     timestamps: true,
+//   }
+// )
 
-const productSchema = mongoose.Schema(
+const productSchema = new Schema(
   {
-    user: {
-      type: mongoose.Schema.Types.ObjectId, // which user (admin only) created the product
-      required: true,
-      ref: 'User', //adds a relationship between the product and the user
-    },
     name: {
       type: String,
       required: true,
@@ -39,7 +35,6 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    reviews: [reviewSchema], //see above schema called reviewSchema
     rating: {
       type: Number,
       required: true,
@@ -66,4 +61,5 @@ const productSchema = mongoose.Schema(
   }
 )
 
-const Product = mongoose.model('Product', productSchema)
+const Product = model('Product', productSchema)
+export default Product
