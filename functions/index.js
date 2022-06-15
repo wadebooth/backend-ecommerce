@@ -3,7 +3,6 @@ import express from 'express'
 import { config } from 'dotenv'
 import cors from 'cors'
 import functions from 'firebase-functions'
-import { MongoClient } from 'mongodb'
 import { productRouter } from './src/routes/productRoutes.js'
 
 config()
@@ -19,33 +18,13 @@ app.use(
   })
 )
 
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}
-
-// const client = mongo.connect(
-//   process.env.MONGO_URL,
-//   options,
-//   (err, mongoClient) => {
-//     if (err) {
-//       console.error(err)
-//       return
-//     }
-//     console.log('we are connected!')
-
-//     const db = MongoClient.db('eCommerce_finalproject')
-//     productsdb = db.collection('products')
-//   }
-// )
-
 app.get('/', (req, res) => {
   res.send('API is running...test')
 })
 
 app.use(productRouter)
 
-app.listen(3001, () => {
+app.listen(3005, () => {
   console.log('Api running...')
 })
 
