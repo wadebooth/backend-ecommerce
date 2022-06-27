@@ -1,6 +1,10 @@
 import express from 'express'
 import { getProductsCollection } from '../gateway/db.js'
-import { createProduct } from '../services/products-services.js'
+import {
+  createProduct,
+  getProduct,
+  getProducts,
+} from '../services/products-services.js'
 
 const productRouter = express.Router()
 
@@ -31,6 +35,7 @@ export const addProduct = async (req, res) => {
 }
 
 productRouter.get('/products', getProducts)
+productRouter.get('/products/:id', getProduct)
 productRouter.post('/products', addProduct)
 
 export { productRouter }

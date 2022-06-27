@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const getDb = async () => {
-  const client = new MongoClient(process.env.MONGO_URL)
+  const client = new MongoClient(process.env.MONGO_URL!)
   await client.connect()
 
   return client.db('eCommerce_finalproject')
@@ -12,4 +12,14 @@ export const getDb = async () => {
 export const getProductsCollection = async () => {
   const db = await getDb()
   return db.collection('products')
+}
+
+export const getOrderCollection = async () => {
+  const db = await getDb()
+  return db.collection('orders')
+}
+
+export const getUserCollection = async () => {
+  const db = await getDb()
+  return db.collection('users')
 }
