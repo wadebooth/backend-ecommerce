@@ -11,7 +11,8 @@
   "engines": {
     "node": "16"
   },
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -24,6 +25,5 @@
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
   },
-  "private": true,
-  "type": "module"
+  "private": true
 }
